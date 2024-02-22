@@ -24,8 +24,8 @@ function setInnerValueById(eleOfID, value) {
     element.innerText = value;
 }
 
-//counter value 
-function counterValueById(eleOfID) {
+//increase counter value by Id
+function increaseCounterValueById(eleOfID) {
     const element = document.getElementById(eleOfID);
     const elementText = element.innerText;
     const elementValue = parseInt(elementText);
@@ -53,7 +53,6 @@ function seat_classById(eleOfID, seatName, seatPrice) {
 
     div.style.display = 'flex';
     div.style.justifyContent = 'space-between';
-    
     container.appendChild(div);
 }
 
@@ -71,23 +70,3 @@ function updateGrandTotalPrice(finalPrice) {
     return finalGrandPrice;
 }
 
-// single discount
-function calculateUpdateWithCouponOne(){
-    const currentGrandTotalPrice = getInnerValueById('totalPrice');
-        const discountedPrice = currentGrandTotalPrice * couponOnePercentage / 100;
-        const updatedGrandTotalPrice = currentGrandTotalPrice - discountedPrice;
-        setInnerValueById('grandTotal' , updatedGrandTotalPrice);
-        const discount = document.getElementById('discount');
-        setInnerValueById('discountedPrice' , discountedPrice);
-        couponFieldDisabled();
-}
-// couple discount
-function calculateUpdateWithCouponTwo(){
-    const currentGrandTotalPrice = getInnerValueById('totalPrice');
-        const discountedPrice = currentGrandTotalPrice * couponTwoPercentage / 100;
-        const updatedGrandTotalPrice = currentGrandTotalPrice - discountedPrice;
-        setInnerValueById('grandTotal' , updatedGrandTotalPrice);
-        const discount = document.getElementById('discount');
-        setInnerValueById('discountedPrice' , discountedPrice);
-        couponFieldDisabled();
-}

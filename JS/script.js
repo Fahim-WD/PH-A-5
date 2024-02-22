@@ -1,9 +1,5 @@
 const seats = document.querySelectorAll('.chair');
 const ticketPrice = ticketPriceById('ticketPrice');
-const couponOnePercentage = getInnerValueById('singleOff');
-const couponOneCode = document.getElementById('singleCupon').innerText;
-const couponTwoPercentage = getInnerValueById('coupleOff');
-const couponTwoCode = document.getElementById('coupleCupon').innerText;
 
 let countValue = 0;
 
@@ -40,4 +36,19 @@ for (const seat of seats) {
         buttonCliked.setAttribute('disabled' , true)
     });
 }
-
+// coupon 
+couponClaimButton.addEventListener('click' , function(){
+    const couponInputValue = couponInput.value;
+    if(couponInputValue === couponOneCode){
+        calculateUpdateWithCouponOne();
+        return;
+    }
+    else if(couponInputValue === couponTwoCode){
+        calculateUpdateWithCouponTwo();
+        return;
+    }
+    else{
+        alert('Your Provided Coupon is not valid !!');
+        return;
+    }
+})

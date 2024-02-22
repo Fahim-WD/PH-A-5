@@ -24,8 +24,8 @@ function setInnerValueById(eleOfID, value) {
     element.innerText = value;
 }
 
-//increase counter value by Id
-function increaseCounterValueById(eleOfID) {
+//counter value 
+function counterValueById(eleOfID) {
     const element = document.getElementById(eleOfID);
     const elementText = element.innerText;
     const elementValue = parseInt(elementText);
@@ -78,7 +78,6 @@ function calculateUpdateWithCouponOne(){
         const updatedGrandTotalPrice = currentGrandTotalPrice - discountedPrice;
         setInnerValueById('grandTotal' , updatedGrandTotalPrice);
         const discount = document.getElementById('discount');
-        discount.classList.remove("hidden");
         setInnerValueById('discountedPrice' , discountedPrice);
         couponFieldDisabled();
 }
@@ -89,7 +88,6 @@ function calculateUpdateWithCouponTwo(){
         const updatedGrandTotalPrice = currentGrandTotalPrice - discountedPrice;
         setInnerValueById('grandTotal' , updatedGrandTotalPrice);
         const discount = document.getElementById('discount');
-        discount.classList.remove("hidden");
         setInnerValueById('discountedPrice' , discountedPrice);
         couponFieldDisabled();
 }
